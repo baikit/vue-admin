@@ -1,0 +1,177 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+body{
+    font-size:16px;line-height:20px;color:#333
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+*{
+    padding: 0;
+}
+
+#app {
+    height: 100%;
+}
+
+.pd-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.mgb-10{
+    margin: 0 0 10px;
+}
+
+.mgt-30{
+    margin:30px 0 0;
+}
+
+/*login-wrap*/
+.login-bg {
+    height: 984px;
+    overflow: hidden;
+    position: relative;
+    .login-win {
+        position: absolute;
+        left: 35%;
+        top: 40%;
+        width: 450px;
+        .login-win-header {
+            text-align: center;
+        }
+    }
+    .login-label {
+        width: 100px;
+    }
+    .login-input {
+        width: 70%;
+    }
+    .login-footer {
+        text-align: center;
+    }
+}
+
+/*home-wrap*/
+.home-container {
+    height: 100%;
+    .nav-slider{
+        position: fixed;
+        height: 100%;
+        background-color: #2f4050;
+    }
+    .nav-header {
+        position: relative;
+        .nav-header-img {
+            height: 190px;
+            width: 220px;
+        }
+        .nav-header-logo {
+            position: absolute;
+            top: 20%;
+            left: 15%;
+            .sys-img{
+                border-radius: 50%
+            }
+            .sys-info{
+                display: block;
+                text-align: left;
+                .sys-name{
+                    display: block;color: #dfe4ed;
+                }
+                .sys-level{
+                    display: block;color: #8095a8;
+                }
+            }
+        }
+    }
+
+    .nav-content{
+        .nav-list{
+            list-style: none;
+            li{
+                &.active{
+                    border-left: 4px solid #19aa8d;
+                    background: #293846
+                }
+                a{
+                    display: block;
+                    color: #a7b1c2;
+                    padding: 14px 20px;
+                    &:hover{
+                        background-color: #293846;
+                        color: #fff
+                    }
+                    &:active{
+                        background-color: #293846;
+                        color: #fff
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .right-content{
+        width: 100%;
+        height: 100%;
+        padding: 0 0 0 220px;
+        min-width: 1200px;
+        .right-content-header {
+            background-color: #fafbfc;
+            line-height: 60px;
+            .left-content-search {
+                width: 260px;
+                float: left;
+            }
+            .right-wrap{
+                float: right;
+            }
+        }
+
+    }
+    .nav-tabs{
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: solid 2px #2f4050;
+    }
+    .main-content{
+        padding: 20px;
+        background-color: #f3f3f4;
+        height: 842px;
+        overflow: hidden;
+        .user-info{
+            width: 30%;
+            height: 650px;
+            float: left;
+            margin-left: 1%;
+            margin-right: 2%;
+
+            .user-img{
+                //min-width: 300px;
+                margin: auto;
+                height: 350px;
+                border: 1px dashed #999;
+                img{
+                    width: auto;
+                    height: 99%;
+                    display: block;
+                    margin: 0 auto;
+                    border:1px solid #000000;
+                }
+            }
+            .user-item{
+                margin-top: 30px;
+            }
+        }
+        .user-wrap{
+            width:65%;
+            height: 800px;
+        }
+    }
+
+}
