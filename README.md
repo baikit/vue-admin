@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+由于使用了sass npm install时候请确认已经安装python2环境
+
 ``` bash
 # install dependencies
 npm install
