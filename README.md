@@ -7,7 +7,8 @@
 由于使用了sass npm install时候请确认已经安装python2环境
 
 若window用户出现  未能加载Visual C++组建"VCBuild.exe" 类似问题。请执行下面命令。可以不用安装Visio之类
-npm install --global --production windows-build-tools
+  
+    npm install --global --production windows-build-tools
 
 
 ``` bash
