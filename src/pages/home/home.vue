@@ -20,16 +20,8 @@
             }
         },
         methods: {
-            checkLogin() {
-                let isLogin = localStorage.getItem('isLogin');
-
-                if (isLogin !== 'true') {
-                    this.$router.push('/login');
-                }
-            }
         },
         created() {
-            this.checkLogin();
         }
     }
 </script>
