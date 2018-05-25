@@ -57,13 +57,13 @@
                 //this.isSubmiting = true;
                 if (this.form.name && this.form.password) {
 
-                    this.$http.get('http://api.baikit.net/user/user/login',{}).then((res) => {
-                        if (res.data.code == 200){
+                    this.$http.post('http://api.baikit.net/user/user/login',{name:this.form.name,password:this.form.password}).then((res) => {
+                        if (res.data.code === 200){
                             this.$message({
                                 message: '登录成功!',
                                 type: 'success'
                             });
-                            sessionStorage.setItem('isLogin', true);
+                            sessionStorage.setItem('isLogin', 'true');
                             this.$router.push({path:'/'});
                         }else{
                             this.$message({

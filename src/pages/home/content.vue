@@ -12,6 +12,7 @@
                     <p class="mgb-10">广州市天河区 <i class="el-icon-edit"></i></p>
                     <h4 class="mgb-10">关于我</h4>
                     <p class="mgb-10">{{ form.desc }}</p>
+                    <p>{{ form.mobile }}</p>
                 </div>
             </el-card>
 
@@ -87,11 +88,11 @@
                 console.log('submit!');
             },
             exchangeUser() {
-                sessionStorage.setItem('isLogin', false);
+                sessionStorage.setItem('isLogin', 'false');
                 this.$router.push('/login');
             },
             logout() {
-                sessionStorage.setItem('isLogin', false);
+                sessionStorage.setItem('isLogin', 'false');
                 this.$router.push('/login');
             }
         },
