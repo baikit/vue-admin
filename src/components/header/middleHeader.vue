@@ -23,12 +23,13 @@
         },
 
         methods: {
-            exchangeUser(){
-                sessionStorage.setItem('isLogin',false);
-                this.$router.push('/login');
+            exchangeUser() {
+                console.log(this);
+                //this.setStorage('isLogin',false);
+                //this.$router.push('/login');
             },
             logout(){
-                sessionStorage.setItem('isLogin',false);
+                this.setStorage('isLogin',false);
                 this.$router.push('/login');
             }
         }

@@ -9,49 +9,49 @@ const router = new Router({
         {
             path: '/',
             name: 'Index',
-            component: resolve => require(['../pages/home/home'], resolve),
+            component: () => import('../views/home/home'),
             meta: {requiresAuth: true}
         },
         {
             path: '/login',
             name: 'Login',
-            component: resolve => require(['../pages/login/login'], resolve),
+            component: () => import('../views/login/login'),
             meta: {requiresAuth: false}
         },
         {
             path: '/photos',
             name: 'Photos',
-            component: resolve => require(['@/pages/photos/photos'], resolve),
+            component: () => import('../views/photos/photos'),
             meta: {requiresAuth: true}
         },
         {
             path: '/state',
             name: 'State',
-            component: resolve => require(['../pages/state/state'], resolve),
+            component: () => import('../views/state/state'),
             meta: {requiresAuth: true}
         },
         {
             path: '/blog',
             name: 'Blog',
-            component: resolve => require(['../pages/blog/blog'], resolve),
+            component: () => import('../views/blog/blog'),
             meta: {requiresAuth: true}
         },
         {
             path: '/data',
             name: 'Dadas',
-            component: resolve => require(['../pages/data/datas'], resolve),
+            component: () => import('../views/data/datas'),
             meta: {requiresAuth: true}
         },
         {
             path: '/sysinfo',
             name: 'SysInfo',
-            component: resolve => require(['../pages/sysinfo/sysinfo'], resolve),
+            component: () => import('../views/sysinfo/sysinfo'),
             meta: {requiresAuth: true}
         },
         {
             path: '/site',
             name: 'Site',
-            component: resolve => require(['../pages/site/site'], resolve),
+            component: () => import('../views/site/site'),
             meta: {requiresAuth: true}
         },
     ]

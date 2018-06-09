@@ -22,6 +22,7 @@
         methods: {
         },
         created() {
+            console.log(this.getStorage('isLogin'));
         }
     }
 </script>

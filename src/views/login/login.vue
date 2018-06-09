@@ -11,7 +11,8 @@
                         <el-input class="login-input" v-model="form.name"></el-input>
                     </el-form-item>
                     <el-form-item label="密码" :label-width="formLabelWidth">
-                        <el-input class="login-input" v-model="form.password" type="password" @keyup.enter.native="loginSure"></el-input>
+                        <el-input class="login-input" v-model="form.password" type="password"
+                                  @keyup.enter.native="loginSure"></el-input>
                     </el-form-item>
                 </el-form>
                 <div class="login-footer">
@@ -41,7 +42,7 @@
             },
             loginSure() {
 
-                if (!this.form.name || !this.form.password){
+                if (!this.form.name || !this.form.password) {
                     this.$message({
                         message: '请输入帐号或密码!',
                         type: 'error'
@@ -56,36 +57,40 @@
 
                 //this.isSubmiting = true;
                 if (this.form.name && this.form.password) {
+                    this.setStorage('');
+                    this.$axios.post(
+                        'http://api.baikit.net/user/user/login',
+                        {
+                            name: this.form.name,
+                            password: this.form.password
 
-                    this.$http.post('http://api.baikit.net/user/user/login',{name:this.form.name,password:this.form.password}).then((res) => {
-                        if (res.data.code === 200){
+                        }
+                    ).then((res) => {
+                        if (res.data.code === 200) {
                             this.$message({
                                 message: '登录成功!',
                                 type: 'success'
                             });
-                            sessionStorage.setItem('isLogin', 'true');
-                            this.$router.push({path:'/'});
-                        }else{
+                            this.setStorage('isLogin',true);
+                            this.$router.push({path: '/'});
+                        } else {
                             this.$message({
                                 message: '登录失败,请确认帐号或者密码是否输入正确!',
                                 type: 'error'
                             });
                             this.isSubmiting = false;
                         }
-
-                    },(error) => {
+                    }).catch((error) => {
                         this.$message({
                             message: '登录失败,请确认帐号或者密码是否输入正确!',
                             type: 'error'
                         });
                         this.isSubmiting = false;
-                        console.log(error);
-                    })
+                    });
                 }
             }
         },
         created() {
-
         }
     };
 
