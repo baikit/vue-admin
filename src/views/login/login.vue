@@ -57,7 +57,6 @@
 
                 //this.isSubmiting = true;
                 if (this.form.name && this.form.password) {
-                    this.setStorage('');
                     this.$axios.post(
                         'http://api.baikit.net/user/user/login',
                         {

@@ -12,7 +12,7 @@ export default {
                 value = JSON.stringify(value)
             }
 
-            sessionStorage.setItem('name', value)
+            sessionStorage.setItem(name, value)
         };
 
         Vue.prototype.getStorage = function (name) {
