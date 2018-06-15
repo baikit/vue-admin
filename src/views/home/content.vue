@@ -5,7 +5,7 @@
             <el-card class="user-info">
                 <div class="pd-bottom-10">个人资料</div>
                 <div class="user-img">
-                    <img :src="require('@/assets/src/user01.jpg')" alt="">
+                    <!--<img :src="" alt="">-->
                 </div>
                 <div class="user-item">
                     <p class="mgb-10">admin <i class="el-icon-edit"></i></p>
@@ -23,7 +23,7 @@
                         <el-input v-model="form.name"></el-input>
                     </el-form-item>
                     <el-form-item label="阅览级别">
-                        <el-select v-model="form.region" placeholder="请选择开放级别">
+                        <el-select v-model="form.level" placeholder="请选择开放级别">
                             <el-option label="对所有人开放" value="nologin"></el-option>
                             <el-option label="仅登陆后可读" value="login"></el-option>
                             <el-option label="仅管理员可读" value="sysuser"></el-option>
@@ -33,21 +33,17 @@
                         <el-input v-model="form.mobile"></el-input>
                     </el-form-item>
                     <el-form-item label="消息推送">
-                        <el-switch v-model="form.delivery"></el-switch>
+                        <el-switch v-model="form.ispushed"></el-switch>
                     </el-form-item>
                     <el-form-item label="发布设置">
                         <el-checkbox-group v-model="form.type">
-                            <el-checkbox label="热搜" name="type"></el-checkbox>
-                            <el-checkbox label="置顶" name="type"></el-checkbox>
-                            <el-checkbox label="只读" name="type"></el-checkbox>
-                            <el-checkbox label="可评论" name="type"></el-checkbox>
-                            <el-checkbox label="可回复" name="type"></el-checkbox>
+                            <el-checkbox v-for="setting in releaseset" :label="setting" :key="setting">{{setting}}</el-checkbox>
                         </el-checkbox-group>
                     </el-form-item>
                     <el-form-item label="公开">
-                        <el-radio-group v-model="form.resource">
-                            <el-radio label="是"></el-radio>
-                            <el-radio label="否"></el-radio>
+                        <el-radio-group v-model="form.opened">
+                            <el-radio label="1">是</el-radio>
+                            <el-radio label="0">否</el-radio>
                         </el-radio-group>
                     </el-form-item>
                     <el-form-item label="关于我">
@@ -66,26 +62,27 @@
 
     import MinddleHeader from "../../components/header/middleHeader";
 
+    const releaseSetList = ['热搜','置顶','只读','可评论','可回复'];
     export default {
         name: 'homecontent',
         components: {MinddleHeader},
-
         data() {
             return {
                 form: {
                     name: 'www.baikit.com',
-                    region: '',
+                    level: 'login',
                     mobile: '135****2715',
-                    delivery: false,
+                    ispushed: false,
                     type: [],
-                    resource: '',
-                    desc: '此人很懒，什么都没有留下'
-                }
+                    opened: '',
+                    desc: '此人很懒，什么都没有留下',
+                },
+                releaseset:releaseSetList
             }
         },
         methods: {
             onSubmit() {
-                console.log('submit!');
+                console.log(this.form);
             },
             exchangeUser() {
                 sessionStorage.setItem('isLogin', 'false');
