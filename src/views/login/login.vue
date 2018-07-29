@@ -55,8 +55,11 @@
                     duration: 2000
                 });
 
+                this.setStorage('isLogin',true);
+                this.$router.push({path: '/'});
+
                 //this.isSubmiting = true;
-                if (this.form.name && this.form.password) {
+                /*if (this.form.name && this.form.password) {
                     this.$axios.post(
                         'http://api.baikit.net/user/user/login',
                         {
@@ -86,7 +89,7 @@
                         });
                         this.isSubmiting = false;
                     });
-                }
+                }*/
             }
         },
         created() {
