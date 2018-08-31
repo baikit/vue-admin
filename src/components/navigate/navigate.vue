@@ -20,7 +20,7 @@
                     :default-active='$route.fullPath'
                     :unique-opened="true"
                     style="height: 100%;width: 100%">
-                <el-submenu v-for="list in navlists" :index="list.index" v-if="list.children">
+                <el-submenu v-for="(list,key) in navlists" :index="list.index" v-if="list.children">
                     <template slot="title" >
                         <i class="el-icon-location"></i>
                         <span>{{list.menuName}}</span>
